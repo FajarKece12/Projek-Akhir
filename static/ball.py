@@ -1,6 +1,5 @@
 from vpython import *
 import random
-import time
 
 # Membuat kanvas untuk simulasi VPython dengan ukuran 800x600 piksel dan pusat di (0,0,0)
 scene = canvas(title='Tugas Lima Bola Memantul Menggunakan Keyboard dan Kursor', width=800, height=600, center=vector(0,0,0))
@@ -122,9 +121,9 @@ timer_text = label(pos=vector(0, frame_size + 3, 0), text='Time Left: 60s', heig
 # Fungsi untuk menjalankan simulasi
 def vpython_simulation():
     global collision_count, achievement_status, stop_on_collision
-    start_time = time.time()  # Mencatat waktu mulai simulasi
+    start_time = clock()  # Mencatat waktu mulai simulasi
     while True:
-        elapsed_time = time.time() - start_time  # Menghitung waktu yang telah berlalu
+        elapsed_time = clock() - start_time  # Menghitung waktu yang telah berlalu
         time_left = 60 - int(elapsed_time)  # Menghitung waktu yang tersisa
         
         if time_left <= 0:
@@ -202,7 +201,8 @@ def vpython_simulation():
     
     achievement_text.text = f'Time\'s up! Achievement: {achievement_status}'  # Menampilkan pencapaian
     timer_text.text = 'Time Left: 0s'  # Mengatur label waktu yang tersisa menjadi 0
-    time.sleep(3)  # Menunggu selama 3 detik sebelum memulai simulasi baru
+    # Menunggu selama 3 detik sebelum memulai simulasi baru
+    scene.pause(3)  
 
 # Loop utama untuk menjalankan simulasi berulang kali setelah waktu habis
 while True:
