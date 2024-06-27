@@ -2,7 +2,7 @@ from vpython import *
 import random
 
 # Membuat kanvas untuk simulasi VPython dengan ukuran 800x600 piksel dan pusat di (0,0,0)
-scene = canvas(title='Tugas Lima Bola Memantul Menggunakan Keyboard dan Kursor', width=800, height=600, center=vector(0,0,0))
+scene = canvas(title='Tugas Lima Bola Memantul Menggunakan Keyboard dan MODE BERHENTI TEKAN T', width=800, height=600, center=vector(0,0,0))
 
 # Warna-warna yang telah ditentukan untuk bola-bola
 colors = [vector(1, 0, 0),  # Merah
